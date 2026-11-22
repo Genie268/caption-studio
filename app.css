@@ -359,3 +359,16 @@ button.icon.xs{width:22px;height:22px;background:var(--p3);border-color:var(--bd
 button.icon.xs svg{width:11px;height:11px;fill:var(--tx);margin:0}
 .clean-go{position:sticky;bottom:-12px;background:var(--p2);padding:10px 0 2px;margin-top:8px}
 input[type=checkbox]{accent-color:var(--gold)}
+
+/* zoom presets and keyframes */
+.zp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:10px}
+.zp-grid button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 2px 6px;font-size:10px;line-height:1.15;font-weight:600;border-radius:8px;background:var(--p2);min-width:0}
+.zp-grid button svg{width:30px;height:20px;margin:0;stroke:var(--gold2);stroke-width:2}
+.zp-grid button span{text-align:center;color:var(--mu)}
+.zp-grid button:hover span{color:var(--tx)}
+.kf-bar{display:flex;align-items:center;gap:4px;margin:2px 0 10px}
+.kf-add{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;height:32px;padding:0 10px;font-weight:600;font-size:12.5px}
+.kf-add svg{width:14px;height:14px;margin:0;stroke-width:2}
+.kf-add.on{background:var(--gdim);border-color:var(--gold);color:var(--gold2)}
+.kf-add.on svg{fill:var(--gold)}
+.kf-bar button:disabled{opacity:.35}
