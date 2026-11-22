@@ -175,7 +175,7 @@ button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;s
 .transport{position:relative}
 .tl-bar{height:36px;flex-shrink:0;display:flex;align-items:center;gap:4px;padding:0 10px;background:var(--p1);border-bottom:1px solid var(--bd)}
 .tl-bar .hint{margin-left:10px}
-.frame video{transform-origin:50% 40%;will-change:transform}
+
 .linkish{background:none;border:none;color:var(--mu);margin-top:16px;text-decoration:underline;font-size:12px}
 .recent{margin-top:20px;text-align:left}
 .recent button{display:flex;width:100%;justify-content:space-between;align-items:center;margin-bottom:6px;background:var(--p1);padding:10px 12px}
@@ -255,7 +255,7 @@ button svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;s
 .moves .mv svg{width:20px;height:20px;margin:0;stroke-width:1.8}
 .moves .mv.on{border-color:var(--gold);background:var(--gdim);color:var(--gold2)}
 
-.frame video{inset:auto;left:0;top:0;width:100%;height:100%;object-fit:fill;transform:none!important}
+.frame video{inset:auto;left:0;top:0;width:100%;height:100%;object-fit:fill;transform-origin:0 0;will-change:transform;backface-visibility:hidden}
 .aspects button{font-size:11.5px;padding:6px 2px}
 .shotlist{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
 .shotcard{background:var(--p2);border:1px solid var(--bd);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
