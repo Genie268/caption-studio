@@ -17,6 +17,9 @@ for (const [name, w, it] of FONTS) {
   }
 }
 fs.writeFileSync(`${out}/fonts.css`, css);
+fs.mkdirSync(`${out}/vendor`, { recursive: true }); fs.mkdirSync(`${out}/models`, { recursive: true });
+fs.copyFileSync('node_modules/@vladmandic/face-api/dist/face-api.esm.js', `${out}/vendor/face-api.esm.js`);
+for (const f of ['ssd_mobilenetv1_model-weights_manifest.json', 'ssd_mobilenetv1_model.bin']) fs.copyFileSync(`node_modules/@vladmandic/face-api/model/${f}`, `${out}/models/${f}`);
 await esbuild.build({ entryPoints: ['app.src.js'], bundle: true, minify: true, format: 'iife', target: 'chrome110', outfile: `${out}/app.js` });
 fs.copyFileSync('app.css', `${out}/app.css`);
 fs.writeFileSync(`${out}/index.html`, fs.readFileSync('index.html', 'utf8').replaceAll('__V__', V));
@@ -29,7 +32,7 @@ fs.writeFileSync(`${out}/manifest.webmanifest`, JSON.stringify({
   background_color: '#0b0b0d', theme_color: '#0b0b0d', description: 'Edit talking videos by their words, style captions, export up to 4K.',
   icons: [{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: 'icons/icon-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }],
 }));
-const pre = ['./', 'index.html', `app.js?v=${V}`, `app.css?v=${V}`, `fonts.css?v=${V}`, 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable.png', ...files];
+const pre = ['./', 'index.html', `app.js?v=${V}`, `app.css?v=${V}`, `fonts.css?v=${V}`, 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable.png', ...files, 'vendor/face-api.esm.js', 'models/ssd_mobilenetv1_model-weights_manifest.json', 'models/ssd_mobilenetv1_model.bin'];
 fs.writeFileSync(`${out}/sw.js`, `const C='cs-${V}',P=${JSON.stringify(pre)};
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(P)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
