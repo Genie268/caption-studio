@@ -28,7 +28,7 @@ await sharp(svg).resize(192, 192).png().toFile(`${out}/icons/icon-192.png`);
 await sharp(svg).resize(512, 512).png().toFile(`${out}/icons/icon-512.png`);
 await sharp({ create: { width: 512, height: 512, channels: 4, background: '#0b0b0d' } }).composite([{ input: await sharp(svg).resize(400, 400).png().toBuffer(), top: 56, left: 56 }]).png().toFile(`${out}/icons/icon-maskable.png`);
 fs.writeFileSync(`${out}/manifest.webmanifest`, JSON.stringify({
-  name: 'Caption Studio', short_name: 'Caption Studio', start_url: './', scope: './', display: 'standalone',
+  name: 'GenieCut', short_name: 'GenieCut', start_url: './', scope: './', display: 'standalone',
   background_color: '#0b0b0d', theme_color: '#0b0b0d', description: 'Edit talking videos by their words, style captions, export up to 4K.',
   icons: [{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: 'icons/icon-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }],
 }));
