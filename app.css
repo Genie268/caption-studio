@@ -560,3 +560,9 @@ body.entering .tl-pane, body.entering .timeline{animation:fromBottom .5s .1s eas
 .applyall-bar{display:flex;flex-direction:column;align-items:stretch}
 .applyall-bar .applyall{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .applyall-bar .applyall span{white-space:nowrap}
+.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.fit-grid button{display:flex;flex-direction:column;align-items:center;gap:5px;padding:9px 2px 7px;font-size:11px}
+.fit-grid button svg{width:26px;height:26px;margin:0;stroke-width:1.4;color:#b9a6ff}
+.fit-grid button.on{border-color:#8d76ff;background:rgba(141,118,255,.14);color:#d9d0ff}
+.mth.wave.mus{background:#16233f;border-color:#2c4a85}.mth.wave.mus svg{stroke:#a9c4ff;width:46%}
+#impMusic{margin-top:8px}
