@@ -574,3 +574,12 @@ body.entering .tl-pane, body.entering .timeline{animation:fromBottom .5s .1s eas
 .alt-row button{position:relative;padding:0;height:64px;overflow:hidden;border-radius:7px}
 .alt-row img{width:100%;height:100%;object-fit:cover;display:block}
 .alt-row i{position:absolute;right:4px;bottom:3px;font-style:normal;font-size:10px;background:rgba(0,0,0,.6);border-radius:4px;padding:1px 4px}
+.modal.ab .seg button{padding:7px 4px;font-size:12px}
+.card-tpls{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.card-tpls button{padding:7px 4px;font-size:11.5px}
+.card-tpls button.on,.card-themes button.on{border-color:var(--gold,#f2b705);color:#fff;background:rgba(242,183,5,.1)}
+.card-fields{display:flex;flex-direction:column;gap:6px;margin:8px 0 4px}
+.card-themes{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.card-themes button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 2px;font-size:10.5px}
+.card-themes i{position:relative;display:grid;place-items:center;width:100%;height:30px;border-radius:5px;font-style:normal;font-weight:800;font-size:13px}
+.card-themes i b{position:absolute;left:30%;right:30%;bottom:5px;height:3px;border-radius:2px}
